@@ -1,49 +1,41 @@
-def is_hamiltonian_path(graph, path, visited, pos):
-    if pos == len(graph):
-        return True
-
-    for vertex in range(len(graph)):
-        if graph[path[pos - 1]][vertex] == 1 and not visited[vertex]:
-            path[pos] = vertex
-            visited[vertex] = True
-
-            if is_hamiltonian_path(graph, path, visited, pos + 1):
-                return True
-
-            path[pos] = -1
-            visited[vertex] = False
-
-    return False
-
-
-def find_hamiltonian_path(graph):
+def hamiltonian_path(graph):
     n = len(graph)
-    path = [-1] * n
-    visited = [False] * n
+    path = []
 
-    for start_vertex in range(n):
-        path[0] = start_vertex
-        visited[start_vertex] = True
+    def backtrack(current, visited):
+        visited.add(current)
+        path.append(current)
 
-        if is_hamiltonian_path(graph, path, visited, 1):
+        if len(path) == n:
+            return True
+
+        for neighbor in graph[current]:
+            if neighbor not in visited:
+                if backtrack(neighbor, visited):
+                    return True
+
+        visited.remove(current)
+        path.pop()
+        return False
+
+    for start_node in graph:
+        path.clear()
+        if backtrack(start_node, set()):
             return path
-
-        path[0] = -1
-        visited[start_vertex] = False
 
     return None
 
 
-# Exemplo de uso
-graph = [
-    [0, 1, 1, 1],
-    [1, 0, 1, 0],
-    [1, 1, 0, 1],
-    [1, 0, 1, 0]
-]
+# Exemplo de grafo
+graph = {
+    0: [1, 2],
+    1: [0, 2, 3],
+    2: [0, 1, 3],
+    3: [1, 2]
+}
 
-path = find_hamiltonian_path(graph)
-if path:
-    print("Caminho Hamiltoniano encontrado:", path)
+result = hamiltonian_path(graph)
+if result:
+    print("Caminho Hamiltoniano encontrado:", result)
 else:
-    print("Não existe Caminho Hamiltoniano.")
+    print("Não existe Caminho Hamiltoniano no grafo.")
