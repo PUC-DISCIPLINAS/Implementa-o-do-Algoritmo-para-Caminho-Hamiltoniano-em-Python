@@ -1,7 +1,3 @@
-Perfeito, Gabriel! Aqui está o `README.md` do seu projeto **CaminhoHamiltoniano**, totalmente no mesmo padrão do *KaratsubaMultiply*, pronto para colar no GitHub:
-
----
-
 # Projeto CaminhoHamiltoniano
 
 ## Descrição do Projeto
@@ -135,7 +131,3 @@ A complexidade ciclomática do algoritmo é **5**, indicando 5 caminhos independ
 ## Conclusão
 
 O algoritmo de backtracking para Caminho Hamiltoniano fornece uma solução correta e funcional para verificar a existência desse caminho em um grafo. Apesar da sua complexidade exponencial, ele é ideal para grafos pequenos ou médios e tem aplicações importantes em otimização, roteamento e IA. Este projeto cumpre os requisitos propostos e está bem estruturado e documentado para fins didáticos.
-
----
-
-Se quiser, posso gerar uma imagem do grafo de exemplo ou adicionar a parte visual com `networkx`. Me avisa que eu preparo isso rapidinho!
