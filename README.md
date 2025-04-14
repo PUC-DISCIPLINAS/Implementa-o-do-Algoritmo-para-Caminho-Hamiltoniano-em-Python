@@ -148,7 +148,8 @@ Como o algoritmo de backtracking não segue esse padrão (não divide o problema
 
 A imagem abaixo mostra um grafo com 4 vértices e o Caminho Hamiltoniano 0 → 1 → 2 → 3 destacado:
 
-![Hamiltonian Path](assets/hamiltonian_path.png)
+![hamiltonian_path_graph](https://github.com/user-attachments/assets/c1956701-2625-4d42-8e41-10fcbd645555)
+
 
 ---
 
